@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">QiSDK Autonomous Recharge Companion Library</string>
+    <string name="start_docking">Start Docking</string>
+    <string name="start_undocking">Start Undocking</string>
+    <string name="permission_granted">Great! Now you can ask Pepper to autonomously recharge.</string>
+    <string name="permission_denied">Bummer. You cannot ask Pepper to autonomously recharge.</string>
+    <string name="ignore_pod">Recall pod location?</string>
+</resources>

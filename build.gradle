@@ -1,0 +1,29 @@
+buildscript {
+
+    // Kotlin
+    ext.kotlin_version = '1.4.10'
+
+    // QiSDK
+    ext.qisdk_group_id = 'com.aldebaran'
+    ext.qisdk_version = '1.7.5'
+
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.0.2'
+        //noinspection DifferentKotlinGradleVersion: Remove this when Kotlin plugin doesn't trigger `API 'variant.getPackageLibrary()' is obsolete` warning anymore.
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'http://android.aldebaran.com/sdk/maven' }
+    }
+}
+
+task clean(type: Delete) { delete rootProject.buildDir }
