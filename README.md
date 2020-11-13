@@ -1,6 +1,6 @@
 # Autonomous Recharge Companion Library
 
-*v1.0.1 - Documentation last updated on 05/11/2020*
+*v1.0.1 - Documentation last updated on 13/11/2020*
 
 ## Summary
 This repository contains the companion library for the Autonomous Recharge application, and a sample application to demonstrate its usage.
@@ -16,7 +16,14 @@ If these conditions do not apply to your use case, the Autonomous Recharge appli
 * Autonomous Recharge application installed on the robot
 
 ## Setup
-* Add the `autonomousrecharge` module to your Android project directory
+* In Android Studio, go to `File` --> `Settings` --> `Plugins`, and make sure the Kotlin plugin is installed.
+* In your project's top-level `build.gradle` file, make sure that all the properties, dependencies and repositories declared in this project's [`build.gradle`](build.gradle) file are included. Note that the versions do not have to be identical.
+* Add a dependency to AndroidX in your project's `gradle.properties` file:
+``` groovy
+    android.useAndroidX=true
+    android.enableJetifier=true
+```
+* Go to `File` --> `New` --> `Import module...` --> add the source directory of the `autonomousrecharge` module and click `Finish`
 * Add the dependency to your module's `build.gradle` file:
 ``` groovy
   implementation project(path: ':autonomousrecharge')
@@ -32,7 +39,7 @@ The library provides APIs for the following features:
 - Subscribe to the docking soon event, triggered by the Autonomous Recharge application. This event is triggered when the battery level is less than 3% above the specified low battery threshold, or when the time is 5 minutes before the specified docking alarm goes off.
 
 ## Sample Usage
-```
+``` kotlin
 override fun onRobotFocusGained(qiContext: QiContext) {
 
     // register the broadcast receiver for autonomous recharge
